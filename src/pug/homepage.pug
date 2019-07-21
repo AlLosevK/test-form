@@ -1,0 +1,147 @@
+---
+title: A Web Page
+bodyClass: homepage-body
+---
+extends shared/_layout
+block content
+  main.container
+    form.form(action="POST" name="form")
+      h3.form__title Заполните анкету
+      .form__personal
+        .form__item
+          p ФИО
+          input(type="text" id="" placeholder="Фамилия Имя Отчество")
+        .form__item
+          p E-mail
+          input(type="text" id="" placeholder="e-mail")
+        .form__item
+          p Укажите мобильный телефон
+          .form__pseudo
+            input(type="tel" id="" placeholder="(123) 4567890")
+        .form__item
+          p Укажите стационарный телефон
+          .form__pseudo
+            input(type="tel" id="" placeholder="(123) 4567890")
+        .form__item
+          p Семейное положение
+          select(name="")
+            option(value="0") Холост
+            option(value="1") В браке
+        .form__item.form__item-childs
+          p Есть ли у Вас несовершенолетние дети
+          label(for="yes") Да
+          input(type="radio" name="childs" id="yes" checked)
+          label(for="no") Нет
+          input(type="radio" name="childs"  id="no")
+        .form__item.form__item-relative
+          p Укажите двух ближайших родственников
+          .form__item
+            input(type="text" placeholder="ФИО")
+            input(type="text" placeholder="Степень родства")
+            .form__pseudo
+              input(type="tel"  placeholder="(123) 4567890")
+          .form__item
+            input(type="text" placeholder="ФИО")
+            input(type="text" placeholder="Степень родства")
+            .form__pseudo
+              input(type="tel"  placeholder="(123) 4567890")
+      .form__reg
+        h3.form__title Адрес фактического места проживания
+        .form__item.form__item-check
+          p(for="addres") Совпадает с местом регистрации
+          input(type="checkbox" name="addres" id="addres")
+        .form__item.form__item-index
+          p.index(for="") Индекс
+          input.index(type="text" id="" placeholder="191023")
+        .form__item.form__item-obl
+          p.obl(for="") Область
+          input.obl(type="text" id="" placeholder="Ленинградская")
+        .form__item
+          p(for="") Город
+          input(type="text" id=""  placeholder="Санкт-Петербург")
+        .form__item.form__item-district
+          p(for="") Район
+          input(type="text" id=""  placeholder="Адмиралтейский")
+        .form__item.form__item-street
+          p(for="") Улица
+          input(type="text" id="" placeholder="Ефимова")
+        .form__item.form__item-house
+          p(for="") Дом
+          input(type="text" id=""  placeholder="3")
+        .form__item.form__item-building
+          p(for="") Корпус
+          input(type="text" id="" placeholder="1")
+        .form__item.form__item-apart
+          p(for="") Квартира
+          input(type="text" id="" placeholder="406")
+        .form__item
+          p(for="") Длительность проживания в регионе по фактическому адресу
+          input(type="text" id=""  placeholder="5 лет")
+        .form__item
+          p Право проживания
+          select(name="")
+            option(value="0") Социальный наем
+            option(value="1") Другое
+      .form__employ
+        h3.form__title Укажите тип вашей основной трудовой занятости
+        .form__item.form__item-check
+          label(for="yes") По найму
+          input(type="radio" name="employment" id="yes" checked)
+          label(for="no") ИП
+          input(type="radio" name="employment"  id="no")
+          label(for="no") Собственник бизнеса
+          input(type="radio" name="employment"  id="no")
+        .form__item
+          p(for="addres") Не могу документально подтвердить занятость
+          input(type="checkbox" name="addres" id="addres")
+        .form__item
+          p Телефон работодателя
+          input(type="tel")
+        .form__item
+          p Укажите кол-во сотрудников в компании
+          input(type="text"  placeholder="10")
+        .form__item
+          p ФИО руководителя
+          input(type="text"  placeholder="ФИО руководителя")
+        .form__item
+          button.form__add +
+          p Дополнительное место работы
+        .form__item
+          p Сайт компании
+          input(type="text"  placeholder="https://")
+        .form__item.form__item-assets
+          p Укажите имеющиеся активы
+          .assets__row
+            .assets__item
+              input(type="checkbox" name="addres" id="car")
+              label(for="car") Автомобиль
+            .assets__item
+              input(type="checkbox" name="addres" id="car")
+              label(for="car") Земельный участок
+          .assets__row
+            .assets__item
+              input(type="checkbox" name="addres" id="flat")
+              label(for="flat") Квартира
+            .assets__item
+              input(type="checkbox" name="addres" id="flat")
+              label(for="flat") Вклады
+          .assets__row
+            .assets__item
+              input(type="checkbox" name="addres" id="house")
+              label(for="house") Дом
+            .assets__item
+              input(type="checkbox" name="addres" id="house")
+              label(for="house") Коммерческая недвижимость
+        .form__item.form__item-check
+          p(for="addres") У меня есть действующие кредиты
+          input(type="checkbox" name="addres" id="addres")
+        .form__item.form__item-bankrupt
+          p Применялась ли к вам процедура банкротства
+          label(for="yes") Нет
+          input(type="radio" name="bankrupt" id="yes" checked)
+          label(for="no") Да
+          input(type="radio" name="bankrupt"  id="no")
+        .form__item
+          p Опишите ваши дополнительные доходы при их наличии
+          input(type="text"  placeholder="Не имеется")
+      button.form__submit(type="submit") Отправить

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- MADE WITH LOVE BY <> KHMELEVSKOY & ASSOCIATES </> www.khmelevskoy.co-->
+    <meta charset="utf-8">
+    <title>A Web Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="all" href="css/app.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body class="homepage-body">
+    <main class="container">
+      <form class="form" action="POST" name="form">
+        <h3 class="form__title">Заполните анкету</h3>
+        <div class="form__personal">
+          <div class="form__item">
+            <p>ФИО</p>
+            <input type="text" id="" placeholder="Фамилия Имя Отчество">
+          </div>
+          <div class="form__item">
+            <p>E-mail</p>
+            <input type="text" id="" placeholder="e-mail">
+          </div>
+          <div class="form__item">
+            <p>Укажите мобильный телефон</p>
+            <div class="form__pseudo">
+              <input type="tel" id="" placeholder="(123) 4567890">
+            </div>
+          </div>
+          <div class="form__item">
+            <p>Укажите стационарный телефон</p>
+            <div class="form__pseudo">
+              <input type="tel" id="" placeholder="(123) 4567890">
+            </div>
+          </div>
+          <div class="form__item">
+            <p>Семейное положение</p>
+            <select name="">
+              <option value="0">Холост</option>
+              <option value="1">В браке</option>
+            </select>
+          </div>
+          <div class="form__item form__item-childs">
+            <p>Есть ли у Вас несовершенолетние дети</p>
+            <label for="yes">Да</label>
+            <input type="radio" name="childs" id="yes" checked>
+            <label for="no">Нет</label>
+            <input type="radio" name="childs" id="no">
+          </div>
+          <div class="form__item form__item-relative">
+            <p>Укажите двух ближайших родственников</p>
+            <div class="form__item">
+              <input type="text" placeholder="ФИО">
+              <input type="text" placeholder="Степень родства">
+              <div class="form__pseudo">
+                <input type="tel" placeholder="(123) 4567890">
+              </div>
+            </div>
+            <div class="form__item">
+              <input type="text" placeholder="ФИО">
+              <input type="text" placeholder="Степень родства">
+              <div class="form__pseudo">
+                <input type="tel" placeholder="(123) 4567890">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__reg">
+          <h3 class="form__title">Адрес фактического места проживания</h3>
+          <div class="form__item form__item-check">
+            <p for="addres">Совпадает с местом регистрации</p>
+            <input type="checkbox" name="addres" id="addres">
+          </div>
+          <div class="form__item form__item-index">
+            <p class="index" for="">Индекс</p>
+            <input class="index" type="text" id="" placeholder="191023">
+          </div>
+          <div class="form__item form__item-obl">
+            <p class="obl" for="">Область</p>
+            <input class="obl" type="text" id="" placeholder="Ленинградская">
+          </div>
+          <div class="form__item">
+            <p for="">Город</p>
+            <input type="text" id="" placeholder="Санкт-Петербург">
+          </div>
+          <div class="form__item form__item-district">
+            <p for="">Район</p>
+            <input type="text" id="" placeholder="Адмиралтейский">
+          </div>
+          <div class="form__item form__item-street">
+            <p for="">Улица</p>
+            <input type="text" id="" placeholder="Ефимова">
+          </div>
+          <div class="form__item form__item-house">
+            <p for="">Дом</p>
+            <input type="text" id="" placeholder="3">
+          </div>
+          <div class="form__item form__item-building">
+            <p for="">Корпус</p>
+            <input type="text" id="" placeholder="1">
+          </div>
+          <div class="form__item form__item-apart">
+            <p for="">Квартира</p>
+            <input type="text" id="" placeholder="406">
+          </div>
+          <div class="form__item">
+            <p for="">Длительность проживания в регионе по фактическому адресу</p>
+            <input type="text" id="" placeholder="5 лет">
+          </div>
+          <div class="form__item">
+            <p>Право проживания</p>
+            <select name="">
+              <option value="0">Социальный наем</option>
+              <option value="1">Другое</option>
+            </select>
+          </div>
+        </div>
+        <div class="form__employ">
+          <h3 class="form__title">Укажите тип вашей основной трудовой занятости</h3>
+          <div class="form__item form__item-check">
+            <label for="yes">По найму</label>
+            <input type="radio" name="employment" id="yes" checked>
+            <label for="no">ИП</label>
+            <input type="radio" name="employment" id="no">
+            <label for="no">Собственник бизнеса</label>
+            <input type="radio" name="employment" id="no">
+          </div>
+          <div class="form__item">
+            <p for="addres">Не могу документально подтвердить занятость</p>
+            <input type="checkbox" name="addres" id="addres">
+          </div>
+          <div class="form__item">
+            <p>Телефон работодателя</p>
+            <input type="tel">
+          </div>
+          <div class="form__item">
+            <p>Укажите кол-во сотрудников в компании</p>
+            <input type="text" placeholder="10">
+          </div>
+          <div class="form__item">
+            <p>ФИО руководителя</p>
+            <input type="text" placeholder="ФИО руководителя">
+          </div>
+          <div class="form__item">
+            <button class="form__add">+</button>
+            <p>Дополнительное место работы</p>
+          </div>
+          <div class="form__item">
+            <p>Сайт компании</p>
+            <input type="text" placeholder="https://">
+          </div>
+          <div class="form__item form__item-assets">
+            <p>Укажите имеющиеся активы</p>
+            <div class="assets__row">
+              <div class="assets__item">
+                <input type="checkbox" name="addres" id="car">
+                <label for="car">Автомобиль</label>
+              </div>
+              <div class="assets__item">
+                <input type="checkbox" name="addres" id="car">
+                <label for="car">Земельный участок</label>
+              </div>
+            </div>
+            <div class="assets__row">
+              <div class="assets__item">
+                <input type="checkbox" name="addres" id="flat">
+                <label for="flat">Квартира</label>
+              </div>
+              <div class="assets__item">
+                <input type="checkbox" name="addres" id="flat">
+                <label for="flat">Вклады</label>
+              </div>
+            </div>
+            <div class="assets__row">
+              <div class="assets__item">
+                <input type="checkbox" name="addres" id="house">
+                <label for="house">Дом</label>
+              </div>
+              <div class="assets__item">
+                <input type="checkbox" name="addres" id="house">
+                <label for="house">Коммерческая недвижимость</label>
+              </div>
+            </div>
+          </div>
+          <div class="form__item form__item-check">
+            <p for="addres">У меня есть действующие кредиты</p>
+            <input type="checkbox" name="addres" id="addres">
+          </div>
+          <div class="form__item form__item-bankrupt">
+            <p>Применялась ли к вам процедура банкротства</p>
+            <label for="yes">Нет</label>
+            <input type="radio" name="bankrupt" id="yes" checked>
+            <label for="no">Да</label>
+            <input type="radio" name="bankrupt" id="no">
+          </div>
+          <div class="form__item">
+            <p>Опишите ваши дополнительные доходы при их наличии</p>
+            <input type="text" placeholder="Не имеется">
+          </div>
+        </div>
+        <button class="form__submit" type="submit">Отправить</button>
+      </form>
+    </main>
+    <script src="js/vendor.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

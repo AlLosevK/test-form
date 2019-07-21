@@ -1,0 +1,134 @@
+.form
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  flex-direction: column
+  width: 100%
+  &__add
+    width: 28px
+    height: 28px
+    border: none
+    margin-right: 20px
+    background-color: #d4d4d4
+    &:hover
+      border: 1px solid black
+  &__personal,
+  &__reg,
+  &__employ
+    width: 100%
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+  &__title
+    width: 100%
+  &__item
+    width: 48%
+    padding: 0 5px
+    margin-bottom: 20px
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    & p
+      width: auto
+      display: block
+      font-size: 16px
+      font-weight: bold
+      font-family: 'Open Sans', sans-serif
+    & input
+      width: 100%
+      padding: 10px 15px
+      border: 1px solid  #d7d7d7
+      font-size: 16px
+      font-weight: bold
+      &[type="radio"]
+        margin-right: 20px
+        width: 35px
+        height: 35px
+      &[type="checkbox"]
+        width: 20px
+    & select
+        width: 100%
+        padding: 10px 5px
+    &-relative
+      width: 100%
+      & .form__item
+        width: 100%
+        padding: 0
+        margin: 0
+        flex-direction: row
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        justify-content: space-between
+        margin-bottom: 20px
+        & .form__pseudo
+          width: 30%
+        & input
+          width: 30%
+          &:first-child
+            width: 35%
+    &-check
+      width: 100%
+      & p
+        width: auto
+    &-index
+      width: 10%
+    &-obl
+      width: 30%
+    &-district,
+    &-street
+      width: 20%
+    &-house,
+    &-building,
+    &-apart
+      width: 11.666667%
+    &-assets
+      width: 100%
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      & label
+        min-width: 30%
+    &-bankrupt,
+    &-childs
+      & p
+        width: 100%
+  &__submit
+    width: 30%
+    padding: 15px 25px
+    background-color: #2396ca
+    text-transform: uppercase
+    color: #fff
+    border: none
+    border-radius: 30px
+    margin: 0 auto
+  &__pseudo
+    position: relative
+    width: 100%
+    & input
+      padding-left: 55px
+      width: 100% !important
+    &:before
+      content: '+7'
+      position: absolute
+      top: 0
+      left: 0
+      padding: 10px 15px
+      font-weight: bold
+      border: 1px solid #d7d7d7
+
+    .assets
+      &__row
+        display: -webkit-flex
+        display: -ms-flex
+        display: flex
+        flex-direction: row
+      &__item
+        min-width: 130px
