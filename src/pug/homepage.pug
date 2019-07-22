@@ -10,68 +10,71 @@ block content
       .form__personal
         .form__item
           p ФИО
-          input(type="text" id="" placeholder="Фамилия Имя Отчество")
+          input(type="text" placeholder="Фамилия Имя Отчество")
         .form__item
           p E-mail
-          input(type="text" id="" placeholder="e-mail")
+          input(type="text" placeholder="e-mail")
         .form__item
           p Укажите мобильный телефон
           .form__pseudo
-            input(type="tel" id="" placeholder="(123) 4567890")
+            input(type="tel" placeholder="(123) 4567890")
         .form__item
           p Укажите стационарный телефон
           .form__pseudo
-            input(type="tel" id="" placeholder="(123) 4567890")
+            input(type="tel" placeholder="(123) 4567890")
         .form__item
           p Семейное положение
-          select(name="")
+          select(name="married")
             option(value="0") Холост
             option(value="1") В браке
         .form__item.form__item-childs
           p Есть ли у Вас несовершенолетние дети
-          label(for="yes") Да
-          input(type="radio" name="childs" id="yes" checked)
-          label(for="no") Нет
-          input(type="radio" name="childs"  id="no")
+          label
+            span.label Да
+            input.radio(type="radio" name="bankrupt" checked)
+            span.radio__custom
+          label
+            span.label Нет
+            input.radio(type="radio" name="bankrupt")
+            span.radio__custom
         .form__item.form__item-relative
           p Укажите двух ближайших родственников
           .form__item
             input(type="text" placeholder="ФИО")
             input(type="text" placeholder="Степень родства")
             .form__pseudo
-              input(type="tel"  placeholder="(123) 4567890")
+              input(type="tel" placeholder="(123) 4567890")
           .form__item
             input(type="text" placeholder="ФИО")
             input(type="text" placeholder="Степень родства")
             .form__pseudo
               input(type="tel"  placeholder="(123) 4567890")
-      .form__reg
-        h3.form__title Адрес фактического места проживания
-        .form__item.form__item-check
-          p(for="addres") Совпадает с местом регистрации
-          input(type="checkbox" name="addres" id="addres")
-        .form__item.form__item-index
+      .form__reg.checkbox-revert
+        h3.form__title Адрес фактического места проживания      
+        input.checkbox-custom(type="checkbox" name="addres" id="addres" checked)
+        label.checkbox-custom-label.form__subtitle(for="addres") Совпадает с местом регистрации
+        .form__item.is-checked.form__item-index
           p.index(for="") Индекс
           input.index(type="text" id="" placeholder="191023")
-        .form__item.form__item-obl
+        .form__item.is-checked.form__item-obl
           p.obl(for="") Область
           input.obl(type="text" id="" placeholder="Ленинградская")
-        .form__item
+        .form__item.is-checked
           p(for="") Город
           input(type="text" id=""  placeholder="Санкт-Петербург")
-        .form__item.form__item-district
+        .form__item.is-checked.form__item-district
           p(for="") Район
           input(type="text" id=""  placeholder="Адмиралтейский")
-        .form__item.form__item-street
+        .form__item.is-checked.form__item-street
           p(for="") Улица
           input(type="text" id="" placeholder="Ефимова")
-        .form__item.form__item-house
+        .form__item.is-checked.form__item-house
           p(for="") Дом
           input(type="text" id=""  placeholder="3")
-        .form__item.form__item-building
+        .form__item.is-checked.form__item-building
           p(for="") Корпус
           input(type="text" id="" placeholder="1")
-        .form__item.form__item-apart
+        .form__item.is-checked.form__item-apart
           p(for="") Квартира
           input(type="text" id="" placeholder="406")
         .form__item
@@ -84,63 +87,103 @@ block content
             option(value="1") Другое
       .form__employ
         h3.form__title Укажите тип вашей основной трудовой занятости
-        .form__item.form__item-check
-          label(for="yes") По найму
-          input(type="radio" name="employment" id="yes" checked)
-          label(for="no") ИП
-          input(type="radio" name="employment"  id="no")
-          label(for="no") Собственник бизнеса
-          input(type="radio" name="employment"  id="no")
-        .form__item
-          p(for="addres") Не могу документально подтвердить занятость
-          input(type="checkbox" name="addres" id="addres")
-        .form__item
-          p Телефон работодателя
-          input(type="tel")
-        .form__item
-          p Укажите кол-во сотрудников в компании
-          input(type="text"  placeholder="10")
-        .form__item
-          p ФИО руководителя
-          input(type="text"  placeholder="ФИО руководителя")
-        .form__item
-          button.form__add +
-          p Дополнительное место работы
-        .form__item
-          p Сайт компании
-          input(type="text"  placeholder="https://")
+        .form__item.form__item-large
+          label          
+            span.label По найму
+            input.radio(type="radio" id="employment-hire" name="employment" checked)
+            span.radio__custom
+          label          
+            span.label ИП
+            input.radio(type="radio" id="employment-individual" name="employment")
+            span.radio__custom
+          label          
+            span.label Собственник бизнеса
+            input.radio(type="radio" id="employment-director" name="employment")
+            span.radio__custom
+        .form__row.form__row-hire.is-visible
+          .form__item.checkbox-revert
+            input.checkbox-custom(type="checkbox" name="addres" id="employment1")
+            label.checkbox-custom-label(for="employment1") Не могу документально подтвердить занятость
+          .form__item
+            p Телефон работодателя
+            input(type="tel")
+          .form__item
+            p Укажите кол-во сотрудников в компании
+            input(type="text" placeholder="10")
+          .form__item
+            p ФИО руководителя
+            input(type="text" placeholder="ФИО руководителя")
+          .form__item
+            button.form__add +
+            p Дополнительное место работы            
+          .form__item
+            p Сайт компании
+            input(type="text" placeholder="https://")
+        .form__row.form__row-individual
+          .form__item
+            p Опишите сферу занятости
+            input(type="text" placeholder="ФИО руководителя")
+          .form__item
+            p Укажите кол-во сотрудников в компании
+            input(type="text" placeholder="10")
+          .form__item
+            p Официальный телефон компании
+            input(type="tel")            
+          .form__item
+            p Сайт компании
+            input(type="text" placeholder="https://")
+        .form__row.form__row-director
+          .form__item
+            p Опишите сферу занятости
+            input(type="text" placeholder="ФИО руководителя")
+          .form__item
+            p Укажите кол-во сотрудников в компании
+            input(type="text" placeholder="10")
+          .form__item
+            p Официальный телефон компании
+            input(type="tel")
+          .form__item
+            p Доля в бизнесе
+            input(type="text" placeholder="10")
+          .form__item
+            p Сайт компании
+            input(type="text" placeholder="https://")
         .form__item.form__item-assets
           p Укажите имеющиеся активы
           .assets__row
             .assets__item
-              input(type="checkbox" name="addres" id="car")
-              label(for="car") Автомобиль
+              input.checkbox-custom(type="checkbox" name="addres" id="car")
+              label.checkbox-custom-label(for="car") Автомобиль
             .assets__item
-              input(type="checkbox" name="addres" id="car")
-              label(for="car") Земельный участок
+              input.checkbox-custom(type="checkbox" name="addres" id="land")
+              label.checkbox-custom-label(for="land") Земельный участок
           .assets__row
             .assets__item
-              input(type="checkbox" name="addres" id="flat")
-              label(for="flat") Квартира
+              input.checkbox-custom(type="checkbox" name="addres" id="flat")
+              label.checkbox-custom-label(for="flat") Квартира
             .assets__item
-              input(type="checkbox" name="addres" id="flat")
-              label(for="flat") Вклады
+              input.checkbox-custom(type="checkbox" name="addres" id="contribution")
+              label.checkbox-custom-label(for="contribution") Вклады
           .assets__row
             .assets__item
-              input(type="checkbox" name="addres" id="house")
-              label(for="house") Дом
+              input.checkbox-custom(type="checkbox" name="addres" id="house")
+              label.checkbox-custom-label(for="house") Дом
             .assets__item
-              input(type="checkbox" name="addres" id="house")
-              label(for="house") Коммерческая недвижимость
-        .form__item.form__item-check
-          p(for="addres") У меня есть действующие кредиты
-          input(type="checkbox" name="addres" id="addres")
+              input.checkbox-custom(type="checkbox" name="addres" id="RealEstate")
+              label.checkbox-custom-label(for="RealEstate") Коммерческая недвижимость
+        .form__item.form__item-credit.checkbox-revert
+          input.checkbox-custom(type="checkbox" id="credit")
+          label.checkbox-custom-label(for="credit") У меня есть действующие кредиты
         .form__item.form__item-bankrupt
-          p Применялась ли к вам процедура банкротства
-          label(for="yes") Нет
-          input(type="radio" name="bankrupt" id="yes" checked)
-          label(for="no") Да
-          input(type="radio" name="bankrupt"  id="no")
+          p Применялась ли к вам процедура банкротства?
+          label
+            span.label Нет
+            input.radio(type="radio" name="bankrupt" checked)
+            span.radio__custom
+          label
+            span.label Да
+            input.radio(type="radio" name="bankrupt")
+            span.radio__custom
         .form__item
           p Опишите ваши дополнительные доходы при их наличии
           input(type="text"  placeholder="Не имеется")

@@ -14,7 +14,8 @@
       border: 1px solid black
   &__personal,
   &__reg,
-  &__employ
+  &__employ,
+  &__addres
     width: 100%
     display: -webkit-flex
     display: -ms-flex
@@ -24,36 +25,75 @@
     justify-content: space-between
   &__title
     width: 100%
+    font-size: 24px
+    font-weight: bold
+  &__subtitle
+    font-size: 18px
+    font-weight: bold
+    width: 100%
+    margin-bottom: 50px !important
+  &__row
+    width: 100%
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    &-hire
+      display: none
+    &-individual
+      display: none
+    &-director
+      display: none
+    &.is-visible
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
   &__item
     width: 48%
     padding: 0 5px
-    margin-bottom: 20px
+    margin-bottom: 30px
     display: -webkit-flex
     display: -ms-flex
     display: flex
     align-items: center
     flex-wrap: wrap
+    &-large
+      width: 100%
     & p
       width: auto
       display: block
+      margin: 0
       font-size: 16px
       font-weight: bold
-      font-family: 'Open Sans', sans-serif
+      font-family: 'Roboto', sans-serif
+    & label
+      font-size: 16px
+      font-weight: bold
+      font-family: 'Roboto', sans-serif
     & input
       width: 100%
       padding: 10px 15px
       border: 1px solid  #d7d7d7
       font-size: 16px
       font-weight: bold
+      margin-top: 20px
       &[type="radio"]
-        margin-right: 20px
+        margin: 0 90px 0 20px
         width: 35px
         height: 35px
       &[type="checkbox"]
         width: 20px
     & select
         width: 100%
-        padding: 10px 5px
+        padding: 9px 5px
+        appearance: none
+        border: 1px solid #d7d7d7
+        background-image: url('../img/arrow.png')
+        background-repeat: no-repeat
+        background-size: 10px 10px
+        background-position: calc(100% - 10px) 50%
+        margin-top: 20px
     &-relative
       width: 100%
       & .form__item
@@ -65,17 +105,14 @@
         display: -ms-flex
         display: flex
         justify-content: space-between
-        margin-bottom: 20px
+        &:first-child
+          margin-bottom: 10px
         & .form__pseudo
           width: 30%
         & input
           width: 30%
           &:first-child
             width: 35%
-    &-check
-      width: 100%
-      & p
-        width: auto
     &-index
       width: 10%
     &-obl
@@ -100,6 +137,8 @@
     &-childs
       & p
         width: 100%
+    &-credit
+      width: 100%
   &__submit
     width: 30%
     padding: 15px 25px
@@ -113,22 +152,104 @@
     position: relative
     width: 100%
     & input
-      padding-left: 55px
+      padding-left: 70px
       width: 100% !important
     &:before
       content: '+7'
       position: absolute
-      top: 0
+      top: 20px
       left: 0
       padding: 10px 15px
       font-weight: bold
       border: 1px solid #d7d7d7
 
-    .assets
-      &__row
-        display: -webkit-flex
-        display: -ms-flex
-        display: flex
-        flex-direction: row
-      &__item
-        min-width: 130px
+input#addres:checked ~ .is-checked
+  display: none
+
+.checkbox-custom
+  display: none
+  &-label
+    display: inline-block
+    position: relative
+    vertical-align: middle
+    margin: 5px
+    cursor: pointer
+  & + .checkbox-custom-label:before
+    content: ''
+    background: #fff
+    border: 2px solid #009fe3
+    display: inline-block
+    vertical-align: middle
+    width: 10px
+    height: 10px
+    padding: 2px
+    margin-right: 10px
+  &:checked + .checkbox-custom-label:after
+    content: ""
+    padding: 2px
+    position: absolute
+    width: 1px
+    height: 13px
+    border: solid #009fe3
+    border-width: 0 2px 2px 0
+    transform: rotate(45deg)
+    bottom: 4px
+    left: 8px
+
+.checkbox-revert
+  .checkbox-custom
+    & + .checkbox-custom-label:before
+      position: absolute
+      top: 0
+      right: -30px
+      margin: 0
+    &:checked + .checkbox-custom-label:after
+      left: auto
+      right: -27px
+
+.form__reg
+  &.checkbox-revert
+    & .checkbox-custom
+      & + .checkbox-custom-label:before
+        position: absolute
+        top: 0
+        right: 65%
+        margin: 0
+      &:checked + .checkbox-custom-label:after
+        left: auto
+        right: 65.3%
+
+.radio
+  display: none
+  &__custom
+    width: 30px
+    height: 30px
+    border: 1px solid  #d7d7d7
+    position: relative
+    border-radius: 50%
+    margin: 0 100px 0 30px
+  &:checked + .radio__custom::before
+    content: ''
+    position: absolute
+    top: 9px
+    right: 9px
+    height: 10px
+    width: 10px
+    border-radius: 50%
+    background-color: #2396ca
+
+.radio__custom,
+.label
+	display: inline-block
+	vertical-align: middle
+
+
+.assets
+  &__row
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+  &__item
+    min-width: 250px

@@ -124,7 +124,7 @@ $(document).ready(function() {
       }
     }
   });
-  
+
 
 
   //////////
@@ -132,7 +132,16 @@ $(document).ready(function() {
   //////////
 
   function initSliders() {
-    
+
   }
-  
+
+
+$('.form__item').click(function() {
+   if($('#employment-hire').is(':checked')) $('.form__row-hire').addClass('is-visible')
+   if($('#employment-individual').is(':checked')) $('.form__row-individual').addClass('is-visible')
+   if($('#employment-director').is(':checked')) $('.form__row-director').addClass('is-visible')
+});
+
+
+
 });
